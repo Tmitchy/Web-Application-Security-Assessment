@@ -73,7 +73,7 @@ To address the risk, I recommended/implemented:<br>
 
 **Part 1: Identifying an XSS Attack**
 
-<img width="1420" height="363" alt="image" src="https://github.com/user-attachments/assets/44c6b56f-18d7-4b6f-97cb-dd8f8aaa37c6" />
+<img width="1420" height="363" alt="image" src="https://github.com/user-attachments/assets/44c6b56f-18d7-4b6f-97cb-dd8f8aaa37c6" /><br>
 
 
 Approach

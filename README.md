@@ -63,6 +63,6 @@ Based on the payload patterns and responses, I assessed whether the attacker was
 To address the risk, I recommended/implemented:
 
 Input validation and parameterized queries (prepared statements)
-- Web application firewall (WAF) rules to filter malicious patterns
+-- Web application firewall (WAF) rules to filter malicious patterns
 - Blocking or rate-limiting suspicious IP activity
 - Continuous monitoring for similar injection attempts

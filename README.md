@@ -133,7 +133,9 @@ I evaluated whether the payload resulted in command execution or system-level in
 ---
 
 **Part 5: Identifying an Insecure Direct Object Reference (IDOR)**
-Approach
+
+
+To detect ID0R injection attempts, I followed a structured analysis process on an access log:
 
 1. Tested object references:<br>
 I manipulated parameters such as user IDs in URLs or requests to check for unauthorized access.
@@ -150,7 +152,7 @@ I checked if object identifiers were sequential or guessable.
 5. Assessed exposure risk:<br>
 I evaluated whether sensitive data could be accessed without proper authorization.
 
-6. Mitigation steps<br>
+6. Mitigation steps:<br>
 
      - Enforced server-side access control checks
      - Used indirect references (e.g., UUIDs)

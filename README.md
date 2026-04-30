@@ -146,8 +146,7 @@ I analyzed the request parameters for user IDs.
 I Looked at the number of requests made to the same page, trying to find a pattern.
 
 3 - Analyzed the IP adress:<br>
-I analyzed the IP address to verify if the same IP adress requested more pages by maunpulating the parameters, and I confirmed that the same IP address 192.168.31.174 requested and successfully access different user ID (object Identifiers) by modifying the figure in the parameters.
-
+I conducted an analysis of the IP address to ascertain whether it had requested multiple pages through parameter manipulation. My findings revealed that the same IP address, 192.168.31.174, requested and successfully accessed various user IDs (object Identifiers) by altering the numerical value within the parameters. This observation highlights potential security vulnerabilities related to user authentication and access controls, suggesting a need for stricter validation mechanisms to prevent unauthorized data access.
 
 4 - Mitigation steps:<br>
 

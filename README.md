@@ -60,8 +60,9 @@ By reviewing the user-agent string, I assessed the browser and operating system 
 Based on the payload patterns and responses, I assessed whether the attacker was attempting to extract, modify, or bypass access to database records.
 
 7. Took mitigation steps
-To address the risk, I recommended/implemented:
-- Input validation and parameterized queries (prepared statements)
-- Web application firewall (WAF) rules to filter malicious patterns
-- Blocking or rate-limiting suspicious IP activity
-- Continuous monitoring for similar injection attempts
+To address the risk, I recommended/implemented:<br>
+     Input validation and parameterized queries (prepared statements)<br>
+     Web application firewall (WAF) rules to filter malicious patterns<br>
+     Blocking or rate-limiting suspicious IP activity<br>
+     Continuous monitoring for similar injection attempts<br>
+     

@@ -139,18 +139,18 @@ I evaluated whether the payload resulted in command execution or system-level in
 
 To detect ID0R injection attempts, I followed a structured analysis process on an access log:
 
-1. Analyzing the parameters :<br>
+ 1 - Analyzing the parameters :<br>
 I analyzed the request parameters for user IDs.
 
-2. Analyzed the pages:<br>
+2 - Analyzed the pages:<br>
 I Looked at the number of requests made to the same page, trying to find a pattern.
 
-3. Analyzed the IP adress:<br>
+3 - Analyzed the IP adress:<br>
 I analyzed the IP address to verify if the same IP adress requested more pages by maunpulating the parameters, and I confirmed that the same IP address 192.168.31.174 requested and successfully access different user ID (object Identifiers) by modifying the figure in the parameters.
 
 
-4. Mitigation steps:<br>
+4 - Mitigation steps:<br>
 
-     - Enforced server-side access control checks
-     - Used indirect references (e.g., UUIDs)
-     - Validated user permissions on every request
+   - Enforced server-side access control checks
+   - Used indirect references (e.g., UUIDs)
+   - Validated user permissions on every request

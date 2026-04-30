@@ -34,3 +34,6 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 - IDOR<br>
 - Directory Traversal Attacks<br>
 - 🧠 Key Takeaways<br>
+
+---
+

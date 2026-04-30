@@ -108,22 +108,22 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
 
 To detect command injection attempts, I followed a structured analysis process on an access log:
 
-1 - Inspected inputs for command patterns:
+1 - Inspected inputs for command patterns:<br>
 I reviewed request parameters for OS command indicators such as ;, &&, |, and keywords like whoami, ls, dir, or cat, which are often used to chain or execute system commands.
 
-2 - Checked for encoded payloads:
+2 - Checked for encoded payloads:<br>
 I analyzed encoded inputs (e.g., %3B, %26%26) to detect obfuscated command injection attempts.
 
-3 - Monitored abnormal application behavior:
+3 - Monitored abnormal application behavior:<br>
 I looked for unexpected system-level responses (e.g., command output in responses, delays, or errors) that could indicate command execution.
 
-4 - Correlated activity with source IP:
+4 - Correlated activity with source IP:<br>
 I tracked repeated suspicious requests from a specific IP to identify a potential attacker.
 
-5 - Assessed execution success:
+5 - Assessed execution success:<br>
 I evaluated whether the payload resulted in command execution or system-level interaction.
 
-6 - Mitigation steps:
+6 - Mitigation steps:<br>
 
    - Avoided direct system command execution from user input
    - Implemented strict input validation and sanitization
@@ -135,23 +135,23 @@ I evaluated whether the payload resulted in command execution or system-level in
 **Part 5: Identifying an Insecure Direct Object Reference (IDOR)**
 Approach
 
-1. Tested object references
+1. Tested object references:<br>
 I manipulated parameters such as user IDs in URLs or requests to check for unauthorized access.
 
-2. Analyzed access control behavior
+2. Analyzed access control behavior:<br>
 I verified whether the application properly restricted access to resources based on user roles.
 
-3. Monitored response differences
+3. Monitored response differences:<br>
 I compared responses when accessing authorized vs. unauthorized resources.
 
-4. Identified predictable patterns
+4. Identified predictable patterns:<br>
 I checked if object identifiers were sequential or guessable.
 
-5. Assessed exposure risk
+5. Assessed exposure risk:<br>
 I evaluated whether sensitive data could be accessed without proper authorization.
 
-6. Mitigation steps
+6. Mitigation steps<br>
 
-Enforced server-side access control checks
-Used indirect references (e.g., UUIDs)
-Validated user permissions on every request
+     - Enforced server-side access control checks
+     - Used indirect references (e.g., UUIDs)
+     - Validated user permissions on every request

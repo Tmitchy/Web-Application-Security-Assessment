@@ -104,7 +104,10 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
 
 **Part 3: Identifying a Command Injection Attack**
 
-To detect XSS code injection attempts, I followed a structured analysis process on an access log:
+To detect command injection attempts, I followed a structured analysis process on an access log:
+
+<img width="1412" height="269" alt="image" src="https://github.com/user-attachments/assets/82b7f538-e53d-4f15-8c05-4ae0eac9e38b" /><br>
+
 
 1 - Inspected inputs for command patterns:
 I reviewed request parameters for OS command indicators such as ;, &&, |, and keywords like whoami, ls, dir, or cat, which are often used to chain or execute system commands.

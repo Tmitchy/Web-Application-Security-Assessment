@@ -41,25 +41,25 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 To detect SQL injection attempts, I followed a structured analysis process:
 
-1 - Inspected user inputs for SQL keywords:
+1 - Inspected user inputs for SQL keywords:<br>
 I began by reviewing input fields and request parameters for common SQL injection indicators such as SELECT, AND, and UNION, which attackers frequently use to manipulate database queries.
 
-Checked for encoded payloads:
+2 - Checked for encoded payloads:<br>
 I analyzed inputs for encoding techniques like percent encoding (e.g., %27 for ') that can be used to obfuscate malicious SQL statements and bypass basic filters.
 
-Monitored request patterns and timing:
+3 - Monitored request patterns and timing:<br>
 I tracked the frequency and timing of requests, focusing on repeated or abnormal query patterns that could indicate automated injection attempts.
 
-Correlated activity with a specific source:
+4 - Correlated activity with a specific source:<br>
 I identified a suspicious IP address (192.168.31.167) and monitored its behavior across multiple requests to determine whether it was attempting exploitation.
 
-Analyzed user-agent data:
+5 - Analyzed user-agent data:<br>
 By reviewing the user-agent string, I assessed the browser and operating system being used. This helped determine whether the activity was likely automated (e.g., scripts/tools) or manual.
 
-Evaluated potential impact:
+6 - Evaluated potential impact:<br>
 Based on the payload patterns and responses, I assessed whether the attacker was attempting to extract, modify, or bypass access to database records.
 
-Took mitigation steps:
+7 - Took mitigation steps:<br>
 To address the risk, I recommended/implemented:<br>
    - Input validation and parameterized queries (prepared statements)<br>
    - Web application firewall (WAF) rules to filter malicious patterns<br>

@@ -61,7 +61,7 @@ Based on the payload patterns and responses, I assessed whether the attacker was
 
 7. Took mitigation steps
 To address the risk, I recommended/implemented:<br>
-     Input validation and parameterized queries (prepared statements)<br>
+   - Input validation and parameterized queries (prepared statements)<br>
      Web application firewall (WAF) rules to filter malicious patterns<br>
      Blocking or rate-limiting suspicious IP activity<br>
      Continuous monitoring for similar injection attempts<br>

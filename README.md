@@ -9,14 +9,15 @@ To mitigate these risks, it is essential to implement robust detection mechanism
 
 This project documents a structured security assessment of common web application vulnerabilities, including:
 
-- [SQL Injection (SQLi)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20XSS%20Attack)<br>
-- Cross-Site Scripting (XSS)<br>
+- XSS Detection<br>
+- SQL Injection Detection<br>
 - Command Injection<br>
 - Open Redirection<br>
 - Brute Force Attacks<br>
-- XML External Entity (XXE)<br>
+- XXE (XML) Attacks<br>
 - File Inclusion (RFI/LFI)<br>
-- IDOR & CSRF<br>
+- IDOR<br>
+- Directory Traversal Attacks<br>
 
 The objective was to identify attack patterns, trace malicious activity, and implement mitigation strategies to improve overall application security.
 

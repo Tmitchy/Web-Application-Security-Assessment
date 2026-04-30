@@ -22,7 +22,7 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 ---
 
-📚 **Table of Contents**
+📚 **Table of Contents**<br>
 
 - XSS Detection<br>
 - SQL Injection Detection<br>
@@ -37,3 +37,4 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 ---
 
+**Part 1: Identifying an XSS Attack**

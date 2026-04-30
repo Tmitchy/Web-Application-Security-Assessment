@@ -39,7 +39,9 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 **Part 1: Identifying an XSS Attack**
 
-To detect SQL injection attempts, I followed a structured analysis process:
+<img width="1413" height="275" alt="image" src="https://github.com/user-attachments/assets/8d429e79-ef61-48d7-b2a0-abdb60c9f036" /><br>
+
+To detect SQL injection attempts, I followed a structured analysis process on an access log:
 
 1 - Inspected user inputs for SQL keywords:<br>
 I began by reviewing input fields and request parameters for common SQL injection indicators such as SELECT, AND, and UNION, which attackers frequently use to manipulate database queries.

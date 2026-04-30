@@ -4,7 +4,8 @@ Web applications are crucial interfaces that connect users to various services o
 To mitigate these risks, it is essential to implement robust detection mechanisms that can identify and respond to web-based attacks. This involves a combination of preventive measures, monitoring tools, and analytical techniques designed to safeguard web applications and their users. Understanding the various types of web attacks, along with their methodologies, is vital for developing effective defense strategies and ensuring the integrity and security of web services.
 
 ---
-#📌 Overview<br>
+
+#📌 Overview
 This project documents a structured security assessment of common web application vulnerabilities, including:
 
 -Cross-Site Scripting (XSS)<br>

@@ -17,3 +17,5 @@ This project documents a structured security assessment of common web applicatio
 -IDOR & CSRF<br>
 
 The objective was to identify attack patterns, trace malicious activity, and implement mitigation strategies to improve overall application security.
+---
+📚 **Table of Contents**

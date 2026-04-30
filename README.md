@@ -25,8 +25,8 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 📚 **Table of Contents**<br>
 
-- XSS Detection<br>
 - SQL Injection Detection<br>
+- XSS Detection<br>
 - Command Injection<br>
 - Open Redirection<br>
 - Brute Force Attacks<br>

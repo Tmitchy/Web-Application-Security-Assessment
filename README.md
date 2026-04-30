@@ -132,7 +132,7 @@ I evaluated whether the payload resulted in command execution or system-level in
 
 ---
 
-**Part 5: Identifying an Insecure Direct Object Reference (IDOR)**
+**Part 4: Identifying an Insecure Direct Object Reference (IDOR)**
 
 
 To detect ID0R injection attempts, I followed a structured analysis process on an access log:

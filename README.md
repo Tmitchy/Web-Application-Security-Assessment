@@ -76,7 +76,7 @@ To address the risk, I recommended/implemented:<br>
 <img width="1420" height="363" alt="image" src="https://github.com/user-attachments/assets/44c6b56f-18d7-4b6f-97cb-dd8f8aaa37c6" /><br>
 
 
-Approach
+To detect XSS code injection attempts, I followed a structured analysis process on an access log:
 
 1 - Inspected request parameters:<br>
 I analyzed incoming requests for suspicious input, focusing on common XSS indicators such as <script> tags and JavaScript functions like alert().
@@ -99,3 +99,6 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
    - Implemented Content Security Policy (CSP)
    - Blocked or restricted malicious IP activity
    - Enabled continuous monitoring for similar patterns
+
+---
+

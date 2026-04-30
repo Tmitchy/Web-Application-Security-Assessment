@@ -21,4 +21,16 @@ This project documents a structured security assessment of common web applicatio
 The objective was to identify attack patterns, trace malicious activity, and implement mitigation strategies to improve overall application security.
 
 ---
+
 📚 **Table of Contents**
+
+- XSS Detection<br>
+- SQL Injection Detection<br>
+- Command Injection<br>
+- Open Redirection<br>
+- Brute Force Attacks<br>
+- XXE (XML) Attacks<br>
+- File Inclusion (RFI/LFI)<br>
+- IDOR<br>
+- Directory Traversal Attacks<br>
+🧠 Key Takeaways<br>

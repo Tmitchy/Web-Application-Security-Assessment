@@ -5,3 +5,15 @@ To mitigate these risks, it is essential to implement robust detection mechanism
 
 ---
 📌 **Overview**
+This project documents a structured security assessment of common web application vulnerabilities, including:
+
+-Cross-Site Scripting (XSS)
+-SQL Injection (SQLi)
+-Command Injection
+-Open Redirection
+-Brute Force Attacks
+-XML External Entity (XXE)
+-File Inclusion (RFI/LFI)
+-IDOR & CSRF
+
+The objective was to identify attack patterns, trace malicious activity, and implement mitigation strategies to improve overall application security.

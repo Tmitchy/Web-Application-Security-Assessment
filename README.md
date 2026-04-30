@@ -132,3 +132,26 @@ I evaluated whether the payload resulted in command execution or system-level in
 
 ---
 
+**Part 5: Identifying an Insecure Direct Object Reference (IDOR)**
+Approach
+
+1. Tested object references
+I manipulated parameters such as user IDs in URLs or requests to check for unauthorized access.
+
+2. Analyzed access control behavior
+I verified whether the application properly restricted access to resources based on user roles.
+
+3. Monitored response differences
+I compared responses when accessing authorized vs. unauthorized resources.
+
+4. Identified predictable patterns
+I checked if object identifiers were sequential or guessable.
+
+5. Assessed exposure risk
+I evaluated whether sensitive data could be accessed without proper authorization.
+
+6. Mitigation steps
+
+Enforced server-side access control checks
+Used indirect references (e.g., UUIDs)
+Validated user permissions on every request

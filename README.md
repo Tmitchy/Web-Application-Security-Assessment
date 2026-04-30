@@ -9,8 +9,8 @@ To mitigate these risks, it is essential to implement robust detection mechanism
 
 This project documents a structured security assessment of common web application vulnerabilities, including:
 
-- [Cross-Site Scripting (XSS)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20XSS%20Attack)<br>
-- SQL Injection (SQLi)<br>
+- [SQL Injection (SQLi)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20XSS%20Attack)<br>
+- Cross-Site Scripting (XSS)<br>
 - Command Injection<br>
 - Open Redirection<br>
 - Brute Force Attacks<br>
@@ -37,7 +37,7 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 ---
 
-**Part 1: Identifying an XSS Attack**
+**Part 1: Identifying an SQL Attack**
 
 <img width="1413" height="275" alt="image" src="https://github.com/user-attachments/assets/8d429e79-ef61-48d7-b2a0-abdb60c9f036" /><br>
 
@@ -68,3 +68,30 @@ To address the risk, I recommended/implemented:<br>
    - Blocking or rate-limiting suspicious IP activity<br>
    - Continuous monitoring for similar injection attempts<br>
      
+---
+
+**Part 1: Identifying an XSS Attack**
+
+Approach
+
+1 - Inspected request parameters:<br>
+I analyzed incoming requests for suspicious input, focusing on common XSS indicators such as <script> tags and JavaScript functions like alert().
+
+2 - Analyzed request patterns and timing:<br>
+I reviewed timestamps and request frequency to identify repeated attempts or unusual behavior from specific sources.
+
+3 - Investigated encoding and special characters:<br>
+I checked for encoded payloads (e.g., %3Cscript%3E) and unusual character patterns used to bypass input filters.
+
+4 - Correlated activity with source IP:<br>
+I identified a suspicious IP address (192.168.31.183) and tracked its interaction with the application.
+
+5 - Confirmed successful exploitation<br>
+As shown in Figure 2, the attacker successfully executed an XSS payload, gaining access to browser cookies, which may expose session data.
+
+6 - Mitigation steps<br>
+
+   - Enforced input validation and output encoding
+   - Implemented Content Security Policy (CSP)
+   - Blocked or restricted malicious IP activity
+   - Enabled continuous monitoring for similar patterns

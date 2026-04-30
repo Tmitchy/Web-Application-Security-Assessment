@@ -38,3 +38,31 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 ---
 
 **Part 1: Identifying an XSS Attack**
+
+To detect SQL injection attempts, I followed a structured analysis process:
+
+1. Inspected user inputs for SQL keywords
+I began by reviewing input fields and request parameters for common SQL injection indicators such as SELECT, AND, and UNION, which attackers frequently use to manipulate database queries.
+
+2. Checked for encoded payloads
+I analyzed inputs for encoding techniques like percent encoding (e.g., %27 for ') that can be used to obfuscate malicious SQL statements and bypass basic filters.
+
+3. Monitored request patterns and timing
+I tracked the frequency and timing of requests, focusing on repeated or abnormal query patterns that could indicate automated injection attempts.
+
+4. Correlated activity with a specific source
+I identified a suspicious IP address (192.168.31.167) and monitored its behavior across multiple requests to determine whether it was attempting exploitation.
+
+5. Analyzed user-agent data
+By reviewing the user-agent string, I assessed the browser and operating system being used. This helped determine whether the activity was likely automated (e.g., scripts/tools) or manual.
+
+6. Evaluated potential impact
+Based on the payload patterns and responses, I assessed whether the attacker was attempting to extract, modify, or bypass access to database records.
+
+7. Took mitigation steps
+To address the risk, I recommended/implemented:
+
+Input validation and parameterized queries (prepared statements)
+- Web application firewall (WAF) rules to filter malicious patterns
+- Blocking or rate-limiting suspicious IP activity
+- Continuous monitoring for similar injection attempts

@@ -153,3 +153,30 @@ I conducted an analysis of the IP address to ascertain whether it had requested 
    - Enforced server-side access control checks
    - Used indirect references (e.g., UUIDs)
    - Validated user permissions on every request
+
+---
+
+**Part 7: Identifying a Directory Traversal Attack**
+
+To detect Directory Traversal Attack, I followed a structured analysis process on an access log:
+
+1 - Inspected file path inputs
+I analyzed parameters for traversal patterns like ../ used to access restricted directories.
+
+2 - Checked encoded variations
+I reviewed encoded payloads (e.g., %2E%2E%2F) to detect bypass attempts.
+
+3 - Monitored file access behavior
+I looked for attempts to access sensitive files (e.g., system configs).
+
+4 - Correlated suspicious requests
+I tracked repeated attempts from specific IPs targeting file paths.
+
+5 - Assessed access success
+I evaluated whether unauthorized files were exposed.
+
+6 - Mitigation steps
+
+   - Validated and sanitized file paths
+   - Restricted access to specific directories
+   - Used secure file handling mechanisms

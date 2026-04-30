@@ -25,7 +25,7 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 
 📚 **Table of Contents**<br>
 
-- SQL Injection Detection<br>
+- [SQL Injection Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20SQL%20Attack)<br>
 - XSS Detection<br>
 - Command Injection<br>
 - Open Redirection<br>

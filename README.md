@@ -9,7 +9,7 @@ To mitigate these risks, it is essential to implement robust detection mechanism
 
 This project documents a structured security assessment of common web application vulnerabilities, including:
 
-- Cross-Site Scripting (XSS)<br>
+- Cross-Site Scripting (XSS)(https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20XSS%20Attack)<br>
 - SQL Injection (SQLi)<br>
 - Command Injection<br>
 - Open Redirection<br>

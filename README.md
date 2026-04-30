@@ -137,25 +137,19 @@ I evaluated whether the payload resulted in command execution or system-level in
 <img width="1377" height="323" alt="image" src="https://github.com/user-attachments/assets/f633444a-f33e-46f3-8035-53319e79a9e7" /><br>
 
 
-
 To detect ID0R injection attempts, I followed a structured analysis process on an access log:
 
-1. Tested object references:<br>
-I manipulated parameters such as user IDs in URLs or requests to check for unauthorized access.
+1. Analyzing the parameters :<br>
+I analyzed the request parameters for user IDs.
 
-2. Analyzed access control behavior:<br>
-I verified whether the application properly restricted access to resources based on user roles.
+2. Analyzed the pages:<br>
+I Looked at the number of requests made to the same page, trying to find a pattern.
 
-3. Monitored response differences:<br>
-I compared responses when accessing authorized vs. unauthorized resources.
+3. Analyzed the IP adress:<br>
+I analyzed the IP address to verify if the same IP adress requested more pages by maunpulating the parameters, and I confirmed that the same IP address 192.168.31.174 requested and successfully access different user ID (object Identifiers) by modifying the figure in the parameters.
 
-4. Identified predictable patterns:<br>
-I checked if object identifiers were sequential or guessable.
 
-5. Assessed exposure risk:<br>
-I evaluated whether sensitive data could be accessed without proper authorization.
-
-6. Mitigation steps:<br>
+4. Mitigation steps:<br>
 
      - Enforced server-side access control checks
      - Used indirect references (e.g., UUIDs)

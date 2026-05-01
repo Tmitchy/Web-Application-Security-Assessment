@@ -33,7 +33,7 @@ The objective was to identify attack patterns, trace malicious activity, and imp
 - XXE (XML) Attacks<br>
 - File Inclusion (RFI/LFI)<br>
 - [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%204%3A%20Identifying%20an%20Insecure%20Direct%20Object%20Reference%20(IDOR))<br>
-- Directory Traversal Attacks<br>
+- Directory Traversal Attacks](<br>
 - 🧠 Key Takeaways<br>
 
 ---

@@ -180,3 +180,7 @@ I evaluated whether unauthorized files were exposed.
    - Validated and sanitized file paths
    - Restricted access to specific directories
    - Used secure file handling mechanisms
+   - Use a secure regular expression to detect payloads e.g /^.*"GET.*\?.*=(.+?(?=%2e%2e%2fetc%2f)).+?.*HTTP\/.*".*$/gm
+   - look out for unicode encode characters e.g  / = %c0af
+
+

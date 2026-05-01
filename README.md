@@ -19,7 +19,7 @@ This project documents a structured security assessment of common web applicatio
 - IDOR<br>
 - Directory Traversal Attacks<br>
 
-The objective was to identify attack patterns, trace malicious activity, and implement mitigation strategies to improve overall application security.
+The objective was to identify attack patterns, trace malicious activities in access log files, and suggest implementations to mitigate risks and improve overall application security.
 
 ---
 
@@ -93,12 +93,12 @@ I identified a suspicious IP address (192.168.31.183) and tracked its interactio
 5 - Confirmed successful exploitation<br>
 As shown in Figure 2, the attacker successfully executed an XSS payload, gaining access to browser cookies, which may expose session data.
 
-6 - Mitigation steps<br>
+6 - Recommended mitigation steps:<br>
 
-   - Enforced input validation and output encoding
-   - Implemented Content Security Policy (CSP)
-   - Blocked or restricted malicious IP activity
-   - Enabled continuous monitoring for similar patterns
+   - Enforce input validation and output encoding
+   - Implement Content Security Policy (CSP)
+   - Block or restricted malicious IP activity
+   - Enable continuous monitoring for similar patterns
 
 ---
 
@@ -123,12 +123,12 @@ I tracked repeated suspicious requests from a specific IP to identify a potentia
 5 - Assessed execution success:<br>
 I evaluated whether the payload resulted in command execution or system-level interaction.
 
-6 - Mitigation steps:<br>
+6 - Recommended mitigation steps:<br>
 
-   - Avoided direct system command execution from user input
-   - Implemented strict input validation and sanitization
-   - Used safe APIs instead of shell commands
-   - Applied least-privilege principles on the server
+   - Avoide direct system command execution from user input
+   - Implemente strict input validation and sanitization
+   - Use safe APIs instead of shell commands
+   - Apply least-privilege principles on the server
 
 ---
 
@@ -148,17 +148,17 @@ I Looked at the number of requests made to the same page, trying to find a patte
 3 - Analyzed the IP adress:<br>
 I conducted an analysis of the IP address to ascertain whether it had requested multiple pages through parameter manipulation. My findings revealed that the same IP address, 192.168.31.174, requested and successfully accessed various user IDs (object Identifiers) by altering the numerical value within the parameters. This observation highlights potential security vulnerabilities related to user authentication and access controls, suggesting a need for stricter validation mechanisms to prevent unauthorized data access.
 
-4 - Mitigation steps:<br>
+4 -Recommended mitigation steps:<br>
 
-   - Enforced server-side access control checks
-   - Used indirect references (e.g., UUIDs)
-   - Validated user permissions on every request
+   - Enforce server-side access control checks
+   - Use indirect references (e.g., UUIDs)
+   - Validate user permissions on every request
 
 ---
 
 **Part 5: Identifying a Directory Traversal Attack**
 
-<img width="1410" height="217" alt="image" src="https://github.com/user-attachments/assets/3b5ecfff-fe3e-4d5d-91da-d05a78896d5e" />
+<img width="1410" height="217" alt="image" src="https://github.com/user-attachments/assets/3b5ecfff-fe3e-4d5d-91da-d05a78896d5e" /><br>
 
 
 To detect Directory Traversal Attack, I followed a structured analysis process on an access log:
@@ -178,12 +178,82 @@ I tracked repeated attempts from specific IPs targeting file paths.
 5 - Assessed access success
 I evaluated whether unauthorized files were exposed.
 
-6 - Mitigation steps
+6 - Recommended mitigation steps:<br>
 
-   - Validated and sanitized file paths
-   - Restricted access to specific directories
-   - Used secure file handling mechanisms
+   - Validate and sanitize file paths
+   - Restrict access to specific directories
+   - Use secure file handling mechanisms
    - Use a secure regular expression to detect payloads e.g /^.*"GET.*\?.*=(.+?(?=%2e%2e%2fetc%2f)).+?.*HTTP\/.*".*$/gm
    - look out for unicode encode characters e.g  / = %c0af
 
+---
+
+**Part 6: Identifying an XML External Entity (XXE) Attack**
+
+<img width="1400" height="292" alt="image" src="https://github.com/user-attachments/assets/bacda878-4402-4529-8e94-4ddc7bb5a44b" /><br>
+
+
+To detect XXE Attack, I followed a structured analysis process on an access log:
+
+1 - Inspected XML inputs:<br>
+I analyzed XML-based requests for the presence of DOCTYPE declarations and <!ENTITY> definitions, which are commonly used in XXE attacks.
+
+2 - Checked for external entity references:<br>
+I looked for references to local or remote resources (e.g., file:///, http://) that could indicate attempts to access sensitive files or external systems.
+
+3 - Analyzed encoded and obfuscated payloads:<br>
+I reviewed encoded XML inputs to detect hidden or obfuscated entity definitions designed to bypass validation.
+
+4 - Monitored application responses:<br>
+I examined responses for signs of sensitive data exposure, such as system file contents or unexpected output from parsed entities.
+
+5 - Correlated activity with source IP:<br>
+I tracked repeated XML-based requests from specific IP addresses attempting to exploit parsing behavior.
+
+6- Assessed exploitation impact:<br>
+I evaluated whether the attack could lead to data exfiltration, server-side request forgery (SSRF), or denial of service.
+
+7 -  Recommended mitigation steps:<br>
+
+   - Disable external entity processing in XML parsers
+   - Use secure parsing libraries and configurations
+   - Validate and sanitize XML input
+   - Replace XML with safer formats like JSON where possible
+
+---
+
+**Part 7: Identifying a Brute Force Attack**
+
+<img width="1411" height="647" alt="image" src="https://github.com/user-attachments/assets/e70255ce-5c32-4bae-836e-002827d5ba06" /><br>
+
+
+To detect XXE Attack, I followed a structured analysis process on an access log:
+
+1 - Monitored authentication requests:<br>
+I analyzed login endpoints (IP address) for repeated authentication attempts, focusing on high-frequency login requests targeting the same or multiple accounts.
+
+2 - Tracked failed vs. successful attempts:<br>
+I reviewed logs to identify patterns of multiple failed logins followed by a potential success, which can indicate password guessing.
+
+3 - Analyzed request timing and rate:<br>
+I examined the speed and volume of requests to detect automated attacks, as brute force attempts typically occur in rapid succession.
+
+4 - Correlated activity with source IP:<br>
+I identified suspicious IP addresses making repeated login attempts across accounts or targeting a single account aggressively.
+
+5 - Reviewed user-agent data:<br>
+I checked the user-agent strings to determine whether the activity was likely automated (scripts/tools) or manual.
+
+6 - Assessed account impact:<br>
+I evaluated whether any accounts were successfully compromised due to weak credentials or lack of protection mechanisms. My analysis confirmed that the IP address 146.24.173.240 accessed the login page for victim.com and successfully gained access to the site through postID = 3 after several brute-force attempts, as shown in the image above.
+ 
+
+7 - Recommended mitigation steps:<br>
+
+   - Implement rate limiting and login throttling
+   - Enforce account lockout after multiple failed attempts
+   - Enable multi-factor authentication (MFA)
+   - Monitor and block suspicious IP activity
+
+---
 

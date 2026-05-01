@@ -31,7 +31,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 - [Open Redirection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%208%3A%20Identifying%20an%20Open%20Redirection%20Attack)<br>
 - [Brute Force Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%207%3A%20Identifying%20a%20Brute%20Force%20Attack)<br>
 - [XXE (XML) Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20an%20XML%20External%20Entity%20(XXE)%20Attack)<br>
-- File Inclusion (RFI/LFI)<br>
+- [File Inclusion (RFI/LFI)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20Remote%20%26%20Local%20File%20Inclusion%20(RFI/LFI))<br>
 - [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%204%3A%20Identifying%20an%20Insecure%20Direct%20Object%20Reference%20(IDOR))<br>
 - [Directory Traversal Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%205%3A%20Identifying%20a%20Directory%20Traversal%20Attack)<br>
 - 🧠 Key Takeaways<br>

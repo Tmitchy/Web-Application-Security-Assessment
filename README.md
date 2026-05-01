@@ -34,7 +34,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 - [File Inclusion (RFI/LFI)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20Remote%20%26%20Local%20File%20Inclusion%20(RFI/LFI))<br>
 - [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%204%3A%20Identifying%20an%20Insecure%20Direct%20Object%20Reference%20(IDOR))<br>
 - [Directory Traversal Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%205%3A%20Identifying%20a%20Directory%20Traversal%20Attack)<br>
-- 🧠 Key Takeaways<br>
+- [🧠 Key Takeaways](https://github.com/Tmitchy/Web-Application-Security-Assessment#:~:text=of%20dynamic%20includes-,%F0%9F%A7%A0%20Key%20Takeaways,-Most%20attacks%20rely)<br>
 
 ---
 

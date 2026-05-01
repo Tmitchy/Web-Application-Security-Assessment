@@ -30,7 +30,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 - [Command Injection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%203%3A%20Identifying%20a%20Command%20Injection%20Attack)<br>
 - Open Redirection<br>
 - [Brute Force Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%207%3A%20Identifying%20a%20Brute%20Force%20Attack)<br>
-- XXE (XML) Attacks<br>
+- [XXE (XML) Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20an%20XML%20External%20Entity%20(XXE)%20Attack)<br>
 - File Inclusion (RFI/LFI)<br>
 - [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%204%3A%20Identifying%20an%20Insecure%20Direct%20Object%20Reference%20(IDOR))<br>
 - [Directory Traversal Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%205%3A%20Identifying%20a%20Directory%20Traversal%20Attack)<br>

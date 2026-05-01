@@ -29,7 +29,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 - [XSS Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%202%3A%20Identifying%20an%20XSS%20Attack)<br>
 - [Command Injection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%203%3A%20Identifying%20a%20Command%20Injection%20Attack)<br>
 - Open Redirection<br>
-- Brute Force Attacks<br>
+- [Brute Force Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%207%3A%20Identifying%20a%20Brute%20Force%20Attack)<br>
 - XXE (XML) Attacks<br>
 - File Inclusion (RFI/LFI)<br>
 - [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%204%3A%20Identifying%20an%20Insecure%20Direct%20Object%20Reference%20(IDOR))<br>
@@ -227,7 +227,7 @@ I evaluated whether the attack could lead to data exfiltration, server-side requ
 <img width="1411" height="647" alt="image" src="https://github.com/user-attachments/assets/e70255ce-5c32-4bae-836e-002827d5ba06" /><br>
 
 
-To detect XXE Attack, I followed a structured analysis process on an access log:
+To detect Brute Force Attack, I followed a structured analysis process on an access log:
 
 1 - Monitored authentication requests:<br>
 I analyzed login endpoints (IP address) for repeated authentication attempts, focusing on high-frequency login requests targeting the same or multiple accounts.

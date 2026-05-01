@@ -257,3 +257,37 @@ I evaluated whether any accounts were successfully compromised due to weak crede
 
 ---
 
+**Part 8: Identifying an Open Redirection Attack**
+
+<img width="1412" height="397" alt="image" src="https://github.com/user-attachments/assets/56234519-8ec9-4eb5-99f4-8313b6332745" />
+
+
+To detect Open Redirection Attack, I followed a structured analysis process on an access log:
+
+1 - Inspected redirect parameters:<br>
+I analyzed request parameters commonly used for redirection (e.g., redirect=, url=, next=) to identify inputs that could be manipulated to send users to unintended destinations.
+
+2 - Checked for external URL patterns:<br>
+I looked for full URLs (http://, https://) within these parameters, which may indicate attempts to redirect users to malicious external sites.
+
+3 - Correlated suspicious activity with source IP:<br>
+I tracked repeated attempts from specific IP addresses trying different redirect values, indicating potential exploitation.
+
+4 - Techniques Analysis:<br>
+I analyzied attack techniques used to bypass the WAF or other middleware products, with crafted payload.<br> e.g http://[::]:25/, http://①②⑦.⓪.⓪.⓪, CDIR:
+http://127.0.0.0,
+ Decimal Bypass:
+http://2130706433/ = http://127.0.0.1,
+ Hexadecimal Bypass:
+http://0x7f000001/ = http://127.0.0.1
+
+
+5 - Assessed exploitation risk:<br>
+I evaluated whether the vulnerability could be used for phishing attacks, user credential theft, or redirecting users to malicious websites.
+
+6 - Recommended mitigation steps:<br>
+
+   - Validate and restricted redirect URLs to trusted domains only
+   - Avoid using user-controlled input for redirects
+   - Implement allowlists for approved destinations
+   - Display warnings for external redirects when necessary

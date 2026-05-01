@@ -158,6 +158,9 @@ I conducted an analysis of the IP address to ascertain whether it had requested 
 
 **Part 5: Identifying a Directory Traversal Attack**
 
+<img width="1410" height="217" alt="image" src="https://github.com/user-attachments/assets/3b5ecfff-fe3e-4d5d-91da-d05a78896d5e" />
+
+
 To detect Directory Traversal Attack, I followed a structured analysis process on an access log:
 
 1 - Inspected file path inputs

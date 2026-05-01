@@ -156,7 +156,7 @@ I conducted an analysis of the IP address to ascertain whether it had requested 
 
 ---
 
-**Part 7: Identifying a Directory Traversal Attack**
+**Part 5: Identifying a Directory Traversal Attack**
 
 To detect Directory Traversal Attack, I followed a structured analysis process on an access log:
 

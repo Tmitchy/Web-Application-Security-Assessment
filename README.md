@@ -1,4 +1,4 @@
-# Web-Application-Security-Assessment
+# Web-Application-Security-Access_log-Assessment
 Web applications are crucial interfaces that connect users to various services over the internet. Due to their widespread use across organizations, these applications are susceptible to exploitation by malicious actors. Such vulnerabilities pose significant risks, including unauthorized access to devices, theft of sensitive personal data, and disruptions in service continuity. These negative outcomes can result in substantial financial losses for affected entities.
  
 To mitigate these risks, it is essential to implement robust detection mechanisms that can identify and respond to web-based attacks. This involves a combination of preventive measures, monitoring tools, and analytical techniques designed to safeguard web applications and their users. Understanding the various types of web attacks, along with their methodologies, is vital for developing effective defense strategies and ensuring the integrity and security of web services.
@@ -7,7 +7,7 @@ To mitigate these risks, it is essential to implement robust detection mechanism
 
 📌 **Overview**<br>
 
-This project documents a structured security assessment of common web application vulnerabilities, including:
+This project documents a comprehensive security assessment of common web application vulnerabilities, expertly analyzed from the perspective of a SOC Analyst, including:
 
 - XSS Detection<br>
 - SQL Injection Detection<br>
@@ -295,6 +295,8 @@ I evaluated whether the vulnerability could be used for phishing attacks, user c
 
 **Part 6: Identifying Remote & Local File Inclusion (RFI/LFI)**
 
+<img width="1446" height="319" alt="image" src="https://github.com/user-attachments/assets/5166e3dd-2bc8-48c0-92e4-b40144f486f2" />
+
 
 To detect RFI/LFI Attack, I followed a structured analysis process on an access log:
 
@@ -322,7 +324,7 @@ Unexpected HTML or script output from external sources
 I tracked repeated attempts from specific IP addresses trying different file paths or remote URLs.
 
 6 - Assessed exploitation success:<br>
-I evaluated whether the attacker successfully included local or remote files, potentially leading to sensitive data exposure or remote code execution.
+I evaluated whether the attacker successfully included local or remote files, potentially leading to sensitive data exposure or remote code execution. My analysis confirmed that the IP address 192.168.31.174 successfully gained access to files such as 'index.php' and 'text.php',and a directory '../etc.passwd' as shown in the image above.
 
 7 - Recommended mitigation steps:<br>
 

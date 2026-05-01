@@ -291,3 +291,42 @@ I evaluated whether the vulnerability could be used for phishing attacks, user c
    - Avoid using user-controlled input for redirects
    - Implement allowlists for approved destinations
    - Display warnings for external redirects when necessary
+---
+
+**Part 6: Identifying Remote & Local File Inclusion (RFI/LFI)**
+
+
+To detect RFI/LFI Attack, I followed a structured analysis process on an access log:
+
+
+1 - Inspected file inclusion parameters:<br>
+I analyzed request parameters that handle file loading (e.g., file=, page=, include=) to identify inputs that could be manipulated to include unintended files.
+
+2- Checked for traversal and remote inclusion patterns:<br>
+I looked for indicators such as:<br>
+
+Directory traversal: ../<br>
+Remote URLs: http://, https://<br>
+These patterns often signal LFI (local access) or RFI (external file inclusion) attempts.
+
+3 - Analyzed encoded payloads:<br>
+I reviewed encoded inputs (e.g., %2E%2E%2F, %68%74%74%70) to detect obfuscated inclusion attempts designed to bypass filters.
+
+4 - Monitored application responses:<br>
+I examined server responses for signs of file exposure, such as:<br>
+
+System file contents (e.g., /etc/passwd)<br>
+Unexpected HTML or script output from external sources
+
+5 - Correlated activity with source IP:<br>
+I tracked repeated attempts from specific IP addresses trying different file paths or remote URLs.
+
+6 - Assessed exploitation success:<br>
+I evaluated whether the attacker successfully included local or remote files, potentially leading to sensitive data exposure or remote code execution.
+
+7 - Recommended mitigation steps:<br>
+
+   - Restrict file inclusion to a whitelist of allowed files
+   - Disable remote file inclusion settings where not required
+   - Implement strict input validation and sanitization
+   - Use secure file handling methods instead of dynamic includes

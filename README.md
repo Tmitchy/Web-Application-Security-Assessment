@@ -332,3 +332,20 @@ I evaluated whether the attacker successfully included local or remote files, po
    - Disable remote file inclusion settings where not required
    - Implement strict input validation and sanitization
    - Use secure file handling methods instead of dynamic includes
+
+---
+
+🧠 **Key Takeaways**
+- Most attacks rely on input manipulation + poor validation
+- Encoding and obfuscation are common attacker techniques
+- Monitoring patterns, timing, and behavior is critical
+- Security improves when combining:<br>
+      - Secure coding practices<br>
+      - Real-time monitoring<br>
+      - User-aware defenses<br>
+
+---
+
+🛡️ **Final Thoughts**
+
+This project demonstrates a structured, repeatable approach to identifying and mitigating common web vulnerabilities. By focusing on both technical patterns and attacker behavior, it strengthens overall application resilience against real-world threats.

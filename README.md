@@ -23,6 +23,12 @@ The objective was to identify attack patterns, trace malicious activities in acc
 
 ---
 
+**Tools**
+- Splunk
+- LetsDefend
+
+  ---
+
 📚 **Table of Contents**<br>
 
 - [SQL Injection Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20SQL%20Attack)<br>
@@ -97,7 +103,7 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
 
    - Enforce input validation and output encoding
    - Implement Content Security Policy (CSP)
-   - Block or restricted malicious IP activity
+   - Block or restrict malicious IP activity
    - Enable continuous monitoring for similar patterns
 
 ---
@@ -109,7 +115,7 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
 To detect command injection attempts, I followed a structured analysis process on an access log:
 
 1 - Inspected inputs for command patterns:<br>
-I reviewed request parameters for OS command indicators such as ;, &&, |, and keywords like whoami, ls, dir, or cat, which are often used to chain or execute system commands.
+I reviewed request parameters for OS command indicators such as;, &&, |, and keywords like whoami, ls, dir, or cat, which are often used to chain or execute system commands.
 
 2 - Checked for encoded payloads:<br>
 I analyzed encoded inputs (e.g., %3B, %26%26) to detect obfuscated command injection attempts.
@@ -125,8 +131,8 @@ I evaluated whether the payload resulted in command execution or system-level in
 
 6 - Recommended mitigation steps:<br>
 
-   - Avoide direct system command execution from user input
-   - Implemente strict input validation and sanitization
+   - Avoid direct system command execution from user input
+   - Implement strict input validation and sanitization
    - Use safe APIs instead of shell commands
    - Apply least-privilege principles on the server
 
@@ -139,13 +145,13 @@ I evaluated whether the payload resulted in command execution or system-level in
 
 To detect ID0R injection attempts, I followed a structured analysis process on an access log:
 
- 1 - Analyzing the parameters :<br>
+ 1 - Analyzing the parameters:<br>
 I analyzed the request parameters for user IDs.
 
 2 - Analyzed the pages:<br>
-I Looked at the number of requests made to the same page, trying to find a pattern.
+I looked at the number of requests made to the same page, trying to find a pattern.
 
-3 - Analyzed the IP adress:<br>
+3 - Analyzed the IP address:<br>
 I conducted an analysis of the IP address to ascertain whether it had requested multiple pages through parameter manipulation. My findings revealed that the same IP address, 192.168.31.174, requested and successfully accessed various user IDs (object Identifiers) by altering the numerical value within the parameters. This observation highlights potential security vulnerabilities related to user authentication and access controls, suggesting a need for stricter validation mechanisms to prevent unauthorized data access.
 
 4 -Recommended mitigation steps:<br>
@@ -161,10 +167,10 @@ I conducted an analysis of the IP address to ascertain whether it had requested 
 <img width="1410" height="217" alt="image" src="https://github.com/user-attachments/assets/3b5ecfff-fe3e-4d5d-91da-d05a78896d5e" /><br>
 
 
-To detect Directory Traversal Attack, I followed a structured analysis process on an access log:
+To detect a directory traversal attack, I followed a structured analysis process on an access log:
 
 1 - Inspected file path inputs
-I analyzed parameters for traversal patterns like ../ used to access restricted directories.
+I analyzed parameters for traversal patterns such as ../ used to access restricted directories.
 
 2 - Checked encoded variations
 I reviewed encoded payloads (e.g., %2E%2E%2F) to detect bypass attempts.
@@ -183,8 +189,8 @@ I evaluated whether unauthorized files were exposed.
    - Validate and sanitize file paths
    - Restrict access to specific directories
    - Use secure file handling mechanisms
-   - Use a secure regular expression to detect payloads e.g /^.*"GET.*\?.*=(.+?(?=%2e%2e%2fetc%2f)).+?.*HTTP\/.*".*$/gm
-   - look out for unicode encode characters e.g  / = %c0af
+   - Use a secure regular expression to detect payloads, e.g.,/^.*"GET.*\?.*=(.+?(?=%2e%2e%2fetc%2f)).+?.*HTTP\/.*".*$/gm
+   - look out for unicode encode characters, e.g.,  / = %c0af
 
 ---
 
@@ -227,7 +233,7 @@ I evaluated whether the attack could lead to data exfiltration, server-side requ
 <img width="1411" height="647" alt="image" src="https://github.com/user-attachments/assets/e70255ce-5c32-4bae-836e-002827d5ba06" /><br>
 
 
-To detect Brute Force Attack, I followed a structured analysis process on an access log:
+To detect a brute force attack, I followed a structured analysis process on an access log:
 
 1 - Monitored authentication requests:<br>
 I analyzed login endpoints (IP address) for repeated authentication attempts, focusing on high-frequency login requests targeting the same or multiple accounts.
@@ -245,7 +251,7 @@ I identified suspicious IP addresses making repeated login attempts across accou
 I checked the user-agent strings to determine whether the activity was likely automated (scripts/tools) or manual.
 
 6 - Assessed account impact:<br>
-I evaluated whether any accounts were successfully compromised due to weak credentials or lack of protection mechanisms. My analysis confirmed that the IP address 146.24.173.240 accessed the login page for victim.com and successfully gained access to the site through postID = 3 after several brute-force attempts, as shown in the image above.
+I evaluated whether any accounts were successfully compromised due to weak credentials or a lack of protection mechanisms. My analysis confirmed that the IP address 146.24.173.240 accessed the login page for victim.com and successfully gained access to the site through postID = 3 after several brute-force attempts, as shown in the image above.
  
 
 7 - Recommended mitigation steps:<br>
@@ -265,7 +271,7 @@ I evaluated whether any accounts were successfully compromised due to weak crede
 To detect Open Redirection Attack, I followed a structured analysis process on an access log:
 
 1 - Inspected redirect parameters:<br>
-I analyzed request parameters commonly used for redirection (e.g., redirect=, url=, next=) to identify inputs that could be manipulated to send users to unintended destinations.
+I analyzed request parameters commonly used for redirection (e.g., redirect=, url=, next= ) to identify inputs that could be manipulated to send users to unintended destinations.
 
 2 - Checked for external URL patterns:<br>
 I looked for full URLs (http://, https://) within these parameters, which may indicate attempts to redirect users to malicious external sites.
@@ -274,7 +280,7 @@ I looked for full URLs (http://, https://) within these parameters, which may in
 I tracked repeated attempts from specific IP addresses trying different redirect values, indicating potential exploitation.
 
 4 - Techniques Analysis:<br>
-I analyzied attack techniques used to bypass the WAF or other middleware products, with crafted payload.<br> e.g http://[::]:25/, http://①②⑦.⓪.⓪.⓪, CDIR:
+I analyzied attack techniques used to bypass the WAF or other middleware products, with a crafted payload.<br> e.g http://[::]:25/, http://①②⑦.⓪.⓪.⓪, CDIR:
 http://127.0.0.0,
  Decimal Bypass:
 http://2130706433/ = http://127.0.0.1,
@@ -287,7 +293,7 @@ I evaluated whether the vulnerability could be used for phishing attacks, user c
 
 6 - Recommended mitigation steps:<br>
 
-   - Validate and restricted redirect URLs to trusted domains only
+   - Validate and restrict redirect URLs to trusted domains only
    - Avoid using user-controlled input for redirects
    - Implement allowlists for approved destinations
    - Display warnings for external redirects when necessary
@@ -321,10 +327,10 @@ System file contents (e.g., /etc/passwd)<br>
 Unexpected HTML or script output from external sources
 
 5 - Correlated activity with source IP:<br>
-I tracked repeated attempts from specific IP addresses trying different file paths or remote URLs.
+I tracked repeated attempts from specific IP addresses, trying different file paths or remote URLs.
 
 6 - Assessed exploitation success:<br>
-I evaluated whether the attacker successfully included local or remote files, potentially leading to sensitive data exposure or remote code execution. My analysis confirmed that the IP address 192.168.31.174 successfully gained access to files such as 'index.php' and 'text.php',and a directory '../etc.passwd' as shown in the image above.
+I evaluated whether the attacker successfully included local or remote files, potentially leading to sensitive data exposure or remote code execution. My analysis confirmed that the IP address 192.168.31.174 successfully gained access to files such as 'index.php' and 'text.php', and a directory '../etc.passwd' as shown in the image above.
 
 7 - Recommended mitigation steps:<br>
 

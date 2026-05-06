@@ -24,7 +24,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 ---
 
 **Tools**
-- Splunk
+
 - LetsDefend
 
   ---

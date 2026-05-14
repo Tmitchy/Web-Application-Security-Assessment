@@ -34,13 +34,13 @@ The objective was to identify attack patterns, trace malicious activities in acc
 - [SQL Injection Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-1-identifying-an-sql-attack)<br>
 - [XSS Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-2-identifying-an-xss-attack)<br>
 - [Command Injection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-3-identifying-a-command-injection-attack)<br>
-- [Open Redirection]()<br>
-- [Brute Force Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%207%3A%20Identifying%20a%20Brute%20Force%20Attack)<br>
-- [XXE (XML) Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20an%20XML%20External%20Entity%20(XXE)%20Attack)<br>
-- [File Inclusion (RFI/LFI)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20Remote%20%26%20Local%20File%20Inclusion%20(RFI/LFI))<br>
-- [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%204%3A%20Identifying%20an%20Insecure%20Direct%20Object%20Reference%20(IDOR))<br>
-- [Directory Traversal Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%205%3A%20Identifying%20a%20Directory%20Traversal%20Attack)<br>
-- [🧠 Key Takeaways](https://github.com/Tmitchy/Web-Application-Security-Assessment#:~:text=of%20dynamic%20includes-,%F0%9F%A7%A0%20Key%20Takeaways,-Most%20attacks%20rely)<br>
+- [Open Redirection](https://github.com/Tmitchy/Web-Application-Security-Assessment#part-8-identifying-an-open-redirection-attack)<br>
+- [Brute Force Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment#part-7-identifying-a-brute-force-attack)<br>
+- [XXE (XML) Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment#part-6-identifying-an-xml-external-entity-xxe-attack)<br>
+- [File Inclusion (RFI/LFI)](https://github.com/Tmitchy/Web-Application-Security-Assessment#part-9-identifying-remote--local-file-inclusion-rfilfi)<br>
+- [IDOR](https://github.com/Tmitchy/Web-Application-Security-Assessment#part-4-identifying-an-insecure-direct-object-reference-idor)<br>
+- [Directory Traversal Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment#part-5-identifying-a-directory-traversal-attack)<br>
+- [🧠 Key Takeaways](https://github.com/Tmitchy/Web-Application-Security-Assessment#-key-takeaways)<br>
 
 ---
 
@@ -48,7 +48,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 
 <img width="1413" height="275" alt="image" src="https://github.com/user-attachments/assets/8d429e79-ef61-48d7-b2a0-abdb60c9f036" /><br>
 
-To detect SQL injection attempts, I followed a structured analysis process on an access log:
+**To detect SQL injection attempts, I followed a structured analysis process on an access log:**
 
 1 - Inspected user inputs for SQL keywords:<br>
 I began by reviewing input fields and request parameters for common SQL injection indicators such as SELECT, AND, and UNION, which attackers frequently use to manipulate database queries.
@@ -82,7 +82,7 @@ To address the risk, I recommended/implemented:<br>
 <img width="1420" height="363" alt="image" src="https://github.com/user-attachments/assets/44c6b56f-18d7-4b6f-97cb-dd8f8aaa37c6" /><br>
 
 
-To detect XSS code injection attempts, I followed a structured analysis process on an access log:
+**To detect XSS code injection attempts, I followed a structured analysis process on an access log:**
 
 1 - Inspected request parameters:<br>
 I analyzed incoming requests for suspicious input, focusing on common XSS indicators such as <script> tags and JavaScript functions like alert().
@@ -112,7 +112,7 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
 
 <img width="1412" height="269" alt="image" src="https://github.com/user-attachments/assets/82b7f538-e53d-4f15-8c05-4ae0eac9e38b" /><br>
 
-To detect command injection attempts, I followed a structured analysis process on an access log:
+**To detect command injection attempts, I followed a structured analysis process on an access log:**
 
 1 - Inspected inputs for command patterns:<br>
 I reviewed request parameters for OS command indicators such as;, &&, |, and keywords like whoami, ls, dir, or cat, which are often used to chain or execute system commands.
@@ -143,7 +143,7 @@ I evaluated whether the payload resulted in command execution or system-level in
 <img width="1377" height="323" alt="image" src="https://github.com/user-attachments/assets/f633444a-f33e-46f3-8035-53319e79a9e7" /><br>
 
 
-To detect ID0R injection attempts, I followed a structured analysis process on an access log:
+**To detect ID0R injection attempts, I followed a structured analysis process on an access log:**
 
  1 - Analyzing the parameters:<br>
 I analyzed the request parameters for user IDs.
@@ -167,7 +167,7 @@ I conducted an analysis of the IP address to ascertain whether it had requested 
 <img width="1410" height="217" alt="image" src="https://github.com/user-attachments/assets/3b5ecfff-fe3e-4d5d-91da-d05a78896d5e" /><br>
 
 
-To detect a directory traversal attack, I followed a structured analysis process on an access log:
+**To detect a directory traversal attack, I followed a structured analysis process on an access log:**
 
 1 - Inspected file path inputs
 I analyzed parameters for traversal patterns such as ../ used to access restricted directories.
@@ -199,7 +199,7 @@ I evaluated whether unauthorized files were exposed.
 <img width="1400" height="292" alt="image" src="https://github.com/user-attachments/assets/bacda878-4402-4529-8e94-4ddc7bb5a44b" /><br>
 
 
-To detect XXE Attack, I followed a structured analysis process on an access log:
+**To detect XXE Attack, I followed a structured analysis process on an access log:**
 
 1 - Inspected XML inputs:<br>
 I analyzed XML-based requests for the presence of DOCTYPE declarations and <!ENTITY> definitions, which are commonly used in XXE attacks.
@@ -233,7 +233,7 @@ I evaluated whether the attack could lead to data exfiltration, server-side requ
 <img width="1411" height="647" alt="image" src="https://github.com/user-attachments/assets/e70255ce-5c32-4bae-836e-002827d5ba06" /><br>
 
 
-To detect a brute force attack, I followed a structured analysis process on an access log:
+**To detect a brute force attack, I followed a structured analysis process on an access log:**
 
 1 - Monitored authentication requests:<br>
 I analyzed login endpoints (IP address) for repeated authentication attempts, focusing on high-frequency login requests targeting the same or multiple accounts.
@@ -268,7 +268,7 @@ I evaluated whether any accounts were successfully compromised due to weak crede
 <img width="1412" height="397" alt="image" src="https://github.com/user-attachments/assets/56234519-8ec9-4eb5-99f4-8313b6332745" />
 
 
-To detect Open Redirection Attack, I followed a structured analysis process on an access log:
+**To detect Open Redirection Attack, I followed a structured analysis process on an access log:**
 
 1 - Inspected redirect parameters:<br>
 I analyzed request parameters commonly used for redirection (e.g., redirect=, url=, next= ) to identify inputs that could be manipulated to send users to unintended destinations.
@@ -304,7 +304,7 @@ I evaluated whether the vulnerability could be used for phishing attacks, user c
 <img width="1446" height="319" alt="image" src="https://github.com/user-attachments/assets/5166e3dd-2bc8-48c0-92e4-b40144f486f2" />
 
 
-To detect RFI/LFI Attack, I followed a structured analysis process on an access log:
+**To detect RFI/LFI Attack, I followed a structured analysis process on an access log:**
 
 
 1 - Inspected file inclusion parameters:<br>

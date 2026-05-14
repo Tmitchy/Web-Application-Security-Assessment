@@ -33,8 +33,8 @@ The objective was to identify attack patterns, trace malicious activities in acc
 
 - [SQL Injection Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-1-identifying-an-sql-attack)<br>
 - [XSS Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-2-identifying-an-xss-attack)<br>
-- [Command Injection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%203%3A%20Identifying%20a%20Command%20Injection%20Attack)<br>
-- [Open Redirection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%208%3A%20Identifying%20an%20Open%20Redirection%20Attack)<br>
+- [Command Injection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-3-identifying-a-command-injection-attack)<br>
+- [Open Redirection]()<br>
 - [Brute Force Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%207%3A%20Identifying%20a%20Brute%20Force%20Attack)<br>
 - [XXE (XML) Attacks](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20an%20XML%20External%20Entity%20(XXE)%20Attack)<br>
 - [File Inclusion (RFI/LFI)](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%206%3A%20Identifying%20Remote%20%26%20Local%20File%20Inclusion%20(RFI/LFI))<br>

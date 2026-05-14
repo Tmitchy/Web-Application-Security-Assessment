@@ -44,7 +44,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 
 ---
 
-**Part 1: Identifying an SQL Attack**
+## Part 1: Identifying an SQL Attack
 
 <img width="1413" height="275" alt="image" src="https://github.com/user-attachments/assets/8d429e79-ef61-48d7-b2a0-abdb60c9f036" /><br>
 

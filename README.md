@@ -31,7 +31,7 @@ The objective was to identify attack patterns, trace malicious activities in acc
 
 📚 **Table of Contents**<br>
 
-- [SQL Injection Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%201%3A%20Identifying%20an%20SQL%20Attack)<br>
+- [SQL Injection Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#part-1-identifying-an-sql-attack)<br>
 - [XSS Detection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%202%3A%20Identifying%20an%20XSS%20Attack)<br>
 - [Command Injection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%203%3A%20Identifying%20a%20Command%20Injection%20Attack)<br>
 - [Open Redirection](https://github.com/Tmitchy/Web-Application-Security-Assessment/blob/main/README.md#:~:text=Part%208%3A%20Identifying%20an%20Open%20Redirection%20Attack)<br>

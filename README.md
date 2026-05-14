@@ -77,7 +77,7 @@ To address the risk, I recommended/implemented:<br>
      
 ---
 
-**Part 2: Identifying an XSS Attack**
+## Part 2: Identifying an XSS Attack
 
 <img width="1420" height="363" alt="image" src="https://github.com/user-attachments/assets/44c6b56f-18d7-4b6f-97cb-dd8f8aaa37c6" /><br>
 
@@ -108,7 +108,7 @@ As shown in Figure 2, the attacker successfully executed an XSS payload, gaining
 
 ---
 
-**Part 3: Identifying a Command Injection Attack**
+## Part 3: Identifying a Command Injection Attack
 
 <img width="1412" height="269" alt="image" src="https://github.com/user-attachments/assets/82b7f538-e53d-4f15-8c05-4ae0eac9e38b" /><br>
 
@@ -138,7 +138,7 @@ I evaluated whether the payload resulted in command execution or system-level in
 
 ---
 
-**Part 4: Identifying an Insecure Direct Object Reference (IDOR)**
+## Part 4: Identifying an Insecure Direct Object Reference (IDOR)
 
 <img width="1377" height="323" alt="image" src="https://github.com/user-attachments/assets/f633444a-f33e-46f3-8035-53319e79a9e7" /><br>
 
@@ -162,7 +162,7 @@ I conducted an analysis of the IP address to ascertain whether it had requested 
 
 ---
 
-**Part 5: Identifying a Directory Traversal Attack**
+## Part 5: Identifying a Directory Traversal Attack
 
 <img width="1410" height="217" alt="image" src="https://github.com/user-attachments/assets/3b5ecfff-fe3e-4d5d-91da-d05a78896d5e" /><br>
 
@@ -194,7 +194,7 @@ I evaluated whether unauthorized files were exposed.
 
 ---
 
-**Part 6: Identifying an XML External Entity (XXE) Attack**
+## Part 6: Identifying an XML External Entity (XXE) Attack
 
 <img width="1400" height="292" alt="image" src="https://github.com/user-attachments/assets/bacda878-4402-4529-8e94-4ddc7bb5a44b" /><br>
 
@@ -228,7 +228,7 @@ I evaluated whether the attack could lead to data exfiltration, server-side requ
 
 ---
 
-**Part 7: Identifying a Brute Force Attack**
+## Part 7: Identifying a Brute Force Attack
 
 <img width="1411" height="647" alt="image" src="https://github.com/user-attachments/assets/e70255ce-5c32-4bae-836e-002827d5ba06" /><br>
 
@@ -263,7 +263,7 @@ I evaluated whether any accounts were successfully compromised due to weak crede
 
 ---
 
-**Part 8: Identifying an Open Redirection Attack**
+## Part 8: Identifying an Open Redirection Attack
 
 <img width="1412" height="397" alt="image" src="https://github.com/user-attachments/assets/56234519-8ec9-4eb5-99f4-8313b6332745" />
 
@@ -299,7 +299,7 @@ I evaluated whether the vulnerability could be used for phishing attacks, user c
    - Display warnings for external redirects when necessary
 ---
 
-**Part 6: Identifying Remote & Local File Inclusion (RFI/LFI)**
+## Part 9: Identifying Remote & Local File Inclusion (RFI/LFI)
 
 <img width="1446" height="319" alt="image" src="https://github.com/user-attachments/assets/5166e3dd-2bc8-48c0-92e4-b40144f486f2" />
 
@@ -341,7 +341,8 @@ I evaluated whether the attacker successfully included local or remote files, po
 
 ---
 
-🧠 **Key Takeaways**
+## 🧠 Key Takeaways
+
 - Most attacks rely on input manipulation + poor validation
 - Encoding and obfuscation are common attacker techniques
 - Monitoring patterns, timing, and behavior is critical
@@ -352,6 +353,6 @@ I evaluated whether the attacker successfully included local or remote files, po
 
 ---
 
-🛡️ **Final Thoughts**
+## 🛡️ Final Thoughts
 
 This project demonstrates a structured, repeatable approach to identifying and mitigating common web vulnerabilities. By focusing on both technical patterns and attacker behavior, it strengthens overall application resilience against real-world threats.
